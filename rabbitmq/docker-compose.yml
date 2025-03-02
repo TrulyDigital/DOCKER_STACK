@@ -1,0 +1,19 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.12-management  # incluye la interfaz web
+    container_name: rabbitmq
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq  # user
+      RABBITMQ_DEFAULT_PASS: rabbitmq  # pass
+      RABBITMQ_DEFAULT_VHOST: my_vhost  # (Opcional) Crear un vhost
+    ports:
+      - "5672:5672"  # amqp port - between microservices
+      - "15672:15672"  # web port - ui
+    volumes:
+      - ./rabbitmq_data:/var/lib/rabbitmq  # vol - persistence
+      - ./rabbitmq_logs:/var/log/rabbitmq  # vol - logs
+
+volumes:
+  rabbitmq_data:
+  rabbitmq_logs:

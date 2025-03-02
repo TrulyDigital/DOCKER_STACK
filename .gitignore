@@ -1,0 +1,10 @@
+/mongodb/volumes
+/mongodb/volumes/*
+
+/sonarqube/volumes
+/sonarqube/volumes/*
+
+/rabbitmq/rabbitmq_data
+/rabbitmq/rabbitmq_data/*
+/rabbitmq/rabbitmq_logs
+/rabbitmq/rabbitmq_logs/*
