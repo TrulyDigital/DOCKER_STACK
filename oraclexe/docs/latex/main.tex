@@ -1,0 +1,110 @@
+% Definición del documento
+\documentclass{article}
+% Paquete para colores en tablas
+\usepackage{colortbl}
+% Paquete para las imágenes
+\usepackage{graphicx}
+% Paquete para la codificación UTF-8
+\usepackage[utf8]{inputenc}
+% Paquete para márgenes del documento
+\usepackage[
+  a4paper,
+  left=2cm,
+  right=2cm,
+  top=2cm,
+  bottom=3cm
+]{geometry}
+% Paquete para colores estándar y personalizados
+\usepackage[dvipsnames]{xcolor}
+\definecolor{fuchsia700}{rgb}{0.635, 0.109, 0.686}
+
+%
+%
+%
+%
+%
+% variables comunes y renombrado de comandos comunes
+\newcommand{\dateEs}{Marzo 14, 2025} % variable fecha
+\renewcommand{\arraystretch}{1.5}  % Espaciado vertical de filas
+
+%
+%
+%
+%
+% 
+\title{
+  \textbf{
+    \Huge
+    \textcolor{darkgray}{Base de Datos}
+    \\ \vspace{1cm}
+    \huge
+    \textcolor{darkgray}{Oracle Database Express Edition (XE)}
+  }
+}
+\author{Alex Meza}
+\date{\dateEs}
+\begin{document}
+\maketitle
+
+%
+%
+%
+%
+%
+% tabla de contenidos
+\newpage
+\tableofcontents
+
+%
+%
+%
+%
+%
+% historial de versiones
+\newpage
+\section{Historial de Versiones}
+\vspace{0.5cm}
+\begin{tabular}{| p{2cm} | p{3.4cm} | p{4.8cm} | p{5.6cm} |}
+  \hline
+    \rowcolor{fuchsia700}
+    \textcolor{White}{\textbf{Versión}} &
+    \textcolor{White}{\textbf{Fecha}} &
+    \textcolor{White}{\textbf{Elaboró}} &
+    \textcolor{White}{\textbf{Comentarios}}
+  \\
+  \hline
+    0.0.1 &
+    \today &
+    Alex Meza \newline alexdanielmeza@gmail.com &
+    Primera versiones
+  \\
+  \hline
+\end{tabular}
+
+%
+%
+%
+%
+%
+% Objetivos
+\newpage
+\section{Objetivos}
+\subsection{Objetivos Generales}
+\subsection{Objetivos Específicos}
+
+%
+%
+%
+%
+%
+\section{Oracle Database Express Edition (XE)}
+\subsection{Versiones de Oracle XE que aplican para esta documentación}
+\subsection{Capacidades máximas de Oracle XE}
+
+%
+%
+%
+%
+%
+% Fin del documento
+\end{document}

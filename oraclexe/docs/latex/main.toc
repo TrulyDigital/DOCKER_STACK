@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Historial de Versiones}{3}{}%
+\contentsline {section}{\numberline {2}Objetivos}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Objetivos Generales}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Objetivos Específicos}{4}{}%
+\contentsline {section}{\numberline {3}¿Oracle Database Express Edition (XE)?}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Versiones de Oracle XE que aplican para esta documentación}{4}{}%
+\contentsline {subsection}{\numberline {3.2}Capacidades máximas de Oracle XE}{4}{}%

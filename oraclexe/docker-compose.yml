@@ -1,0 +1,30 @@
+services:
+  oracle-xe:
+    image: oracle/database:18.4.0-xe
+    container_name: oraclexe
+    restart: always
+    ports:
+      - "1521:1521"  # Database port
+      - "5500:5500"  # Admin port
+    networks:
+      - docker-stack
+    environment:
+      - ORACLE_PWD=${ORACLE_PWD}
+      - ORACLE_CHARACTERSET=${ORACLE_CHARACTERSET}
+    volumes:
+      - ./volumes/oracle_data:/opt/oracle/oradata  # Volumen persistente para los datos
+      - ./volumes/oracle_config:/opt/oracle/config  # Configuración adicional
+    mem_limit: 
+      "2g"
+    cpus: 
+      "1"
+    healthcheck:
+      test: ["CMD", "/opt/oracle/checkDBStatus.sh"]
+      interval: 30s
+      retries: 5
+      start_period: 40s
+      timeout: 10s
+
+networks:
+  docker-stack:
+    external: true

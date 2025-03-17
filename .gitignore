@@ -1,10 +1,17 @@
 /mongodb/volumes
 /mongodb/volumes/*
 
+/oraclexe/volumes
+/oraclexe/volumes/*
+/oraclexe/repository
+/oraclexe/repository/*
+
+/postgresql/volumes
+/postgresql/volumes/*
+
+/rabbitmq/volumes
+/rabbitmq/volumes/*
+
 /sonarqube/volumes
 /sonarqube/volumes/*
 
-/rabbitmq/rabbitmq_data
-/rabbitmq/rabbitmq_data/*
-/rabbitmq/rabbitmq_logs
-/rabbitmq/rabbitmq_logs/*
