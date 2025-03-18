@@ -61,7 +61,7 @@ services:
       - KAFKA_INTER_BROKER_LISTENER_NAME=${KAFKA_INTER_BROKER_LISTENER_NAME_NODE_2}
       - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=${KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR_NODE_2}
     volumes:
-      - ./volumes/broker1:${KAFKA_LOG_DIRS_NODE_2}
+      - ./volumes/broker2:${KAFKA_LOG_DIRS_NODE_2}
     mem_limit: 
       "2g"
     cpus: 
