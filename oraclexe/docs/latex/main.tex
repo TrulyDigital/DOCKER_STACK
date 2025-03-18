@@ -98,6 +98,23 @@
 %
 %
 \section{Oracle Database Express Edition (XE)}
+\subsection{Construir imágen Docker de Oracle Database Express Edition (XE)}
+Descargar el repositorio de Oracle \newline
+git clone https://github.com/oracle/docker-images.git \newline
+\\ \\
+Entrar al siguiente directorio \newline
+cd docker-images/OracleDatabase/SingleInstance/dockerfiles \newline
+\\ \\
+Entrar al directorio de la versión 18 \newline
+cd 18.4.0 \newline
+\\ \\
+Construir la imágen personalizada \newline
+docker build -t oracle/database:18.4.0-xe -f Dockerfile.xe . \newline
+\\ \\
+Esto construirá una imagen Docker personalizada de Oracle Database XE.
+\subsection{Ejecutar Oracle Database XE en un contenedor Docker}
+Para esto se construye un fichero docker-compose.yml \newline
+\\ \\
 \subsection{Versiones de Oracle XE que aplican para esta documentación}
 \subsection{Capacidades máximas de Oracle XE}
 

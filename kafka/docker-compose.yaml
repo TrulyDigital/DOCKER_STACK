@@ -1,0 +1,72 @@
+services:
+  kafka-zookeeper-1:
+    image: 
+      confluentinc/cp-zookeeper:latest
+    container_name: 
+      kafka-zookeeper-1
+    restart: 
+      unless-stopped
+    environment:
+      - ZOOKEEPER_CLIENT_PORT=${ZOOKEEPER_CLIENT_PORT_NODE_1}
+    ports:
+      - "2181:2181"
+    mem_limit: 
+      "0.5g"
+    cpus: 
+      "0.5"
+
+  kafka-broker-1:
+    image: 
+      confluentinc/cp-kafka:latest
+    container_name: 
+      kafka-broker-1
+    restart: 
+      unless-stopped
+    depends_on:
+      - kafka-zookeeper-1
+    ports:
+      - "9092:9092" # comunicación interna docker
+      - "29092:29092" # puerto externo para clientes
+    environment:
+      - KAFKA_BROKER_ID=${KAFKA_BROKER_ID_NODE_1}
+      - KAFKA_ZOOKEEPER_CONNECT=${KAFKA_ZOOKEEPER_CONNECT}
+      - KAFKA_LISTENERS=${KAFKA_LISTENERS_NODE_1}
+      - KAFKA_ADVERTISED_LISTENERS=${KAFKA_ADVERTISED_LISTENERS_NODE_1}
+      - KAFKA_INTER_BROKER_LISTENER_NAME=${KAFKA_INTER_BROKER_LISTENER_NAME_NODE_1}
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=${KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR_NODE_1}
+    volumes:
+      - ./volumes/broker1:${KAFKA_LOG_DIRS_NODE_1}
+    mem_limit: 
+      "2g"
+    cpus: 
+      "1"
+
+  kafka-broker-2:
+    image: 
+      confluentinc/cp-kafka:latest
+    container_name: 
+      kafka-broker-2
+    restart: 
+      unless-stopped
+    depends_on:
+      - kafka-zookeeper-1
+    ports:
+      - "9093:9093" # comunicación interna docker
+      - "29093:29093" # puerto externo para clientes
+    environment:
+      - KAFKA_BROKER_ID=${KAFKA_BROKER_ID_NODE_2}
+      - KAFKA_ZOOKEEPER_CONNECT=${KAFKA_ZOOKEEPER_CONNECT}
+      - KAFKA_LISTENERS=${KAFKA_LISTENERS_NODE_2}
+      - KAFKA_ADVERTISED_LISTENERS=${KAFKA_ADVERTISED_LISTENERS_NODE_2}
+      - KAFKA_INTER_BROKER_LISTENER_NAME=${KAFKA_INTER_BROKER_LISTENER_NAME_NODE_2}
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=${KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR_NODE_2}
+    volumes:
+      - ./volumes/broker1:${KAFKA_LOG_DIRS_NODE_2}
+    mem_limit: 
+      "2g"
+    cpus: 
+      "1"
+
+networks:
+  docker-stack:
+    external: true
