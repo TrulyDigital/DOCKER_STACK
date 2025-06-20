@@ -4,6 +4,9 @@
 /mongodb/volumes
 /mongodb/volumes/*
 
+/mysql/volumes/mysql
+/mysql/volumes/mysql/*
+
 /oraclexe/volumes
 /oraclexe/volumes/*
 /oraclexe/repository
