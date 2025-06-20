@@ -7,6 +7,11 @@
 /mysql/volumes/mysql
 /mysql/volumes/mysql/*
 
+/n8n/volumes/n8n
+/n8n/volumes/n8n/*
+/n8n/volumes/postgresql
+/n8n/volumes/postgresql/*
+
 /oraclexe/volumes
 /oraclexe/volumes/*
 /oraclexe/repository
